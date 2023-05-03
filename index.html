@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Follow US</h1>
+    <div id="SM"> 
+        <div id="FB"><i class="fa-brands fa-facebook"></i><p>Facebook</p></div>
+        <div id="TW"><i class="fa-brands fa-twitter"></i><p>Twitter</p></div>
+        <div id="IG"><i class="fa-brands fa-instagram"></i><p>Instagram</p></div>
+    </div>
+
+   <script>
+        const SM = document.querySelector("#SM");
+
+        for (let i = 0; i < SM.children.length; i++) {
+
+            let SMChildren = SM.children[i];
+            let toggle = false
+            const Computed = window.getComputedStyle(SM.children[i])
+
+            SMChildren.addEventListener("click", function () {
+
+                if(toggle == false){
+                    document.body.style.backgroundColor = Computed.backgroundColor;
+                    toggle = SMChildren.classList.toggle("animationMonte");
+                    SMChildren.style.boxShadow = "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,"+Computed.backgroundColor+" 0px 30px 60px -30px";
+
+                }else if(toggle){
+                    document.body.style.backgroundColor = "grey";
+                    toggle = SMChildren.classList.toggle("animationMonte");
+                }
+                
+            })
+        }
+
+        /*
+
+        if(e.srcElement == document.getElementById("FB")){
+            document.body.style.backgroundColor = "rgb(81, 59, 160)";
+        }
+        if(e.srcElement == document.getElementById("TW")){
+            document.body.style.backgroundColor = "rgb(29, 155, 240)";
+        }
+        if(e.srcElement == document.getElementById("IG")){
+            document.body.style.backgroundColor = "rgb(193, 53, 132)";
+        }
+        
+        */
+
+
+        
+    </script>
+
+
+        
+</body>
+
+</html> 
+        
+
+
+    
