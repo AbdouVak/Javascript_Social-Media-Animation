@@ -25,38 +25,28 @@
             let SMChildren = SM.children[i];
             let toggle = false
             const Computed = window.getComputedStyle(SM.children[i])
-
-            SMChildren.addEventListener("click", function () {
-
+            
+            SMChildren.addEventListener("click", function (e) {
                 if(toggle == false){
-                    document.body.style.backgroundColor = Computed.backgroundColor;
                     toggle = SMChildren.classList.toggle("animationMonte");
                     SMChildren.style.boxShadow = "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,"+Computed.backgroundColor+" 0px 30px 60px -30px";
-
+                    console.log(e.srcElement)
+                    if(e.srcElement == document.getElementById("FB")||e.srcElement.classList.contains("fa-facebook")||e.srcElement.innerText == "Facebook"){
+                        document.body.style.backgroundColor = "rgb(62, 36, 156)";
+                    }
+                    if(e.srcElement == document.getElementById("TW")||e.srcElement.classList.contains("fa-twitter")||e.srcElement.innerText == "Twitter"){
+                        document.body.style.backgroundColor = "rgb(68, 169, 236)";
+                    }
+                    if(e.srcElement == document.getElementById("IG")||e.srcElement.classList.contains("fa-twitter")||e.srcElement.innerText == "Instagram"){
+                        document.body.style.backgroundColor = "rgb(201, 75, 146)";
+                    }
                 }else if(toggle){
                     document.body.style.backgroundColor = "grey";
                     toggle = SMChildren.classList.toggle("animationMonte");
+                    SMChildren.style.boxShadow = "none";
                 }
-                
             })
         }
-
-        /*
-
-        if(e.srcElement == document.getElementById("FB")){
-            document.body.style.backgroundColor = "rgb(81, 59, 160)";
-        }
-        if(e.srcElement == document.getElementById("TW")){
-            document.body.style.backgroundColor = "rgb(29, 155, 240)";
-        }
-        if(e.srcElement == document.getElementById("IG")){
-            document.body.style.backgroundColor = "rgb(193, 53, 132)";
-        }
-        
-        */
-
-
-        
     </script>
 
 
